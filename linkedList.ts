@@ -67,3 +67,13 @@ list.add(9);
 list.add(199);
 list.insertAtBeggining(42);
 list.remove(9);
+
+const array = [10, 23, 34, 42, 52];
+
+for (let i = 0; i <= array.length; i++) {
+  console.log(i);
+}
+
+for (const element in array) {
+  console.log(array[element]);
+}
