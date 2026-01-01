@@ -42,6 +42,22 @@ class LinkedList<T> {
     node.next = this.head;
     this.head = node;
   }
+
+  remove(value: T): void {
+    if (!this.head) return;
+    if (this.head.value === value) {
+      this.head = this.head.next;
+      return;
+    }
+    let current = this.head;
+
+    while (current.next && current.next.value !== value) {
+      current = current.next;
+    }
+    if (current.next) {
+      current.next = current.next.next;
+    }
+  }
 }
 
 const list = new LinkedList<number>();
@@ -50,4 +66,4 @@ list.add(1);
 list.add(9);
 list.add(199);
 list.insertAtBeggining(42);
-list.print();
+list.remove(9);
